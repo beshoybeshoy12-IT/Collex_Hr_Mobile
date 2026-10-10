@@ -1,25 +1,56 @@
 {
   "expo": {
-    "name": "Collex-Hr-Mobile",
-    "slug": "Collex-Hr-Mobile",
+    "name": "Collex HR",
+    "slug": "collex-hr",
+    "scheme": "collexhr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#020617",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020617"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.collex.hr"
     },
     "android": {
+      "package": "com.collex.hr",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0f0d2e",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "ACCESS_WIFI_STATE", "ACCESS_NETWORK_STATE"],
       "predictiveBackGestureEnabled": false
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      ["expo-localization", { "supportsRTL": false }],
+      [
+        "expo-location",
+        { "locationWhenInUsePermission": "Collex HR uses your location to confirm you are at work when you check in." }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true,
+            "buildArchs": ["arm64-v8a"]
+          }
+        }
+      ],
+      "expo-sharing",
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }

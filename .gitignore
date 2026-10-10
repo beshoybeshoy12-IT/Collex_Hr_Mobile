@@ -39,3 +39,11 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# build outputs (rebuild with build-apk.ps1)
+*.apk
+*.aab
+build.log
+
+# local tool settings
+.claude/
